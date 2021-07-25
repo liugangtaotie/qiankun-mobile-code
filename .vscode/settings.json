@@ -1,0 +1,94 @@
+{
+  "remote.SSH.showLoginTerminal": true,
+  "team.showWelcomeMessage": false,
+  // "[javascript]": {
+  //   "editor.defaultFormatter": "HookyQR.beautify"
+  // },
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  // ******第一部分：Eslint的配置******
+  "typescript.check.tscVersion": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue",
+  ],
+  // #去掉代码结尾的分号
+  "prettier.semi": false,
+  // #使用带引号替代双引号
+  "prettier.singleQuote": true,
+  // vscode默认启用了根据文件类型自动设置tabsize的选项
+  "editor.detectIndentation": false,
+  // 重新设定tabsize
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "files.autoSave": "off",
+  "files.insertFinalNewline": true, // 文件的最后一行空一行
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  // "vetur.validation.template": true,
+  "vetur.format.enable": true,
+  "vetur.validation.template": false,
+  "workbench.settings.editor": "json",
+  "terminal.integrated.rendererType": "dom",
+  "vscode_custom_css.policy": true,
+  "powermode.enabled": true, // 开启 Power Mode
+  "powermode.shakeIntensity": 0, // 关闭抖动（喜欢的也可以选择不关闭）
+  "powermode.presets": "exploding-rift", // 特效预设，“particles”, “fireworks”, “flames”, “magic”, “clippy”, “simple-rift”, “exploding-rift”.
+  "[css]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "fcrespo82.markdown-table-formatter"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  // "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+    "*.json": "jsonc",
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "window.zoomLevel": 0,
+  "C_Cpp.updateChannel": "Insiders",
+  "http.proxySupport": "off",
+  "workbench.colorTheme": "SynthWave '84",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.largeFileOptimizations": false,
+  "todo-tree.tree.showScanModeButton": false, // 这个是样式，包括火焰，烟火，魔法等
+  "todo-tree.highlights.customHighlight": {
+    "API": { //关键词
+      "background": "green", //背景颜色
+      "icon": "issue-closed", //icon
+      "rulerColour": "green", //文字颜色
+      "iconColour": "green" // icon颜色
+    },
+    "METHOD": {
+      "foreground": "black",
+      "background": "yellow",
+      "icon": "issue-closed",
+      "rulerColour": "yellow",
+      "iconColour": "yellow"
+    }
+  },
+  "search.followSymlinks": false,
+}
