@@ -1,31 +1,29 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home-one</router-link> |
-      <router-link to="/about">About-one</router-link> |
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
     </div>
-    <div>
-      从vuex的global module的state： {{ JSON.stringify(user) }}
-    </div>
-    <router-view/>
+    <div>从vuex的global module的state： {{ JSON.stringify(user) }}</div>
+    <router-view />
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState } from "vuex";
 export default {
   computed: {
     // 通过global获取user的信息
-    ...mapState('global', {
-      user: state => state.user
-    })
+    ...mapState("global", {
+      user: (state) => state.user,
+    }),
   },
   methods: {
-    gotoSubReact () {
-      history.pushState(null, 'sub-react', '/sub-react')
-    }
-  }
-}
+    gotoSubReact() {
+      history.pushState(null, "sub-react", "/sub-react");
+    },
+  },
+};
 </script>
 
 <style>
@@ -49,5 +47,4 @@ export default {
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
 </style>

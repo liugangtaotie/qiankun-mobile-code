@@ -6,26 +6,16 @@ const microApps = [
     entry: process.env.VUE_APP_SUB_HOME,
     activeRule: "/sub-home"
   },
-  // {
-  //   name: 'sub-vue',
-  //   entry: process.env.VUE_APP_SUB_VUE,
-  //   activeRule: '/sub-vue'
-  // }
   {
-    name: "sub-one",
-    entry: process.env.VUE_APP_SUB_ONE,
-    activeRule: "/sub-one"
+    name: "sub-first",
+    entry: process.env.VUE_APP_SUB_FIRST,
+    activeRule: "/sub-first"
+  },
+  {
+    name: "sub-react",
+    entry: process.env.VUE_APP_SUB_REACT,
+    activeRule: "/sub-react"
   }
-  // {
-  //   name: 'sub-two',
-  //   entry: process.env.VUE_APP_SUB_TWO,
-  //   activeRule: '/sub-two'
-  // },
-  // {
-  //   name: 'sub-react',
-  //   entry: process.env.VUE_APP_SUB_REACT,
-  //   activeRule: '/sub-react'
-  // }
 ];
 
 const apps = microApps.map(item => {

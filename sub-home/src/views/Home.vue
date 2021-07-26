@@ -16,8 +16,8 @@
     </div>
 
     <van-grid class="flex flex_around" :gutter="10" :column-num="3">
-      <van-grid-item icon="photo-o" text="sub-one" @click="gotoSubOne" />
-      <van-grid-item icon="photo-o" text="文字" />
+      <van-grid-item icon="photo-o" text="sub-first" @click="gotoSubOne" />
+      <van-grid-item icon="photo-o" text="sub-react" @click="gotoSubReact" />
       <van-grid-item icon="photo-o" text="文字" />
     </van-grid>
 
@@ -44,9 +44,13 @@ import { Component, Vue } from "vue-property-decorator";
 export default class Home extends Vue {
   private active = 0;
 
-  // 跳转sub-one
+  // 跳转sub-first
   gotoSubOne() {
-    history.pushState(null, "sub-one", "/sub-one");
+    history.pushState(null, "sub-first", "/sub-first");
+  }
+
+  gotoSubReact() {
+    history.pushState(null, "sub-react", "/sub-react");
   }
 }
 </script>

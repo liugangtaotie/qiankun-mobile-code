@@ -15,7 +15,8 @@
     "install:sub-react": "cd sub-react && npm i",
     "start": "npm-run-all --parallel start:*",
     "start:sub-home": "cd sub-home && npm start",
-    "start:sub-one": "cd sub-one && npm start",
+    "start:sub-first": "cd sub-first && npm start",
+    "start:sub-react": "cd sub-react && npm start",
     "start:main": "cd main && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
