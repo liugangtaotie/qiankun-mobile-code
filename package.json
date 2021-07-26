@@ -21,14 +21,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@fengxianqi.github.com:fengxianqi/qiankun-example.git"
+    "url": "github.com:liugangtaotie/qiankun-mobile-code.git"
   },
   "keywords": [
     "qiankun",
     "qiankun-example",
     "demo"
   ],
-  "author": "fengxianqi",
+  "author": "wuxiang",
   "license": "MIT",
   "__npminstall_done": false
 }
