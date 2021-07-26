@@ -6,9 +6,7 @@ module.exports = {
   extends: [
     "plugin:vue/essential",
     "@vue/prettier",
-    "@vue/typescript",
     "prettier",
-    "prettier/@typescript-eslint",
     "prettier/babel",
     "prettier/flowtype",
     "prettier/react",
@@ -33,9 +31,6 @@ module.exports = {
     "generator-star-spacing": "off",
     "space-before-function-paren": 0,
     "prettier/prettier": "off"
-  },
-  parserOptions: {
-    parser: "@typescript-eslint/parser"
   },
   overrides: [
     {

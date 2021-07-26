@@ -13,24 +13,24 @@
         <van-swipe-item>3</van-swipe-item>
         <van-swipe-item>4</van-swipe-item>
       </van-swipe>
-
-      <van-grid class="mt10" :gutter="10" :column-num="3">
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-      </van-grid>
-
-      <van-grid class="mt10" :gutter="10">
-        <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text" />
-      </van-grid>
     </div>
+
+    <van-grid class="flex flex_around" :gutter="10" :column-num="3">
+      <van-grid-item icon="photo-o" text="sub-one" @click="gotoSubOne" />
+      <van-grid-item icon="photo-o" text="文字" />
+      <van-grid-item icon="photo-o" text="文字" />
+    </van-grid>
+
+    <van-grid class="mt10" :gutter="10">
+      <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text" />
+    </van-grid>
 
     <!--footer-->
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o">首页</van-tabbar-item>
-      <van-tabbar-item icon="search" badge="5">消息</van-tabbar-item>
-      <van-tabbar-item icon="friends-o" badge="2">服务</van-tabbar-item>
-      <van-tabbar-item icon="setting-o">我的</van-tabbar-item>
+      <van-tabbar-item icon="search" badge="5" to="/message">消息</van-tabbar-item>
+      <van-tabbar-item icon="friends-o" badge="2" to="/service">服务</van-tabbar-item>
+      <van-tabbar-item icon="setting-o" to="/person">我的</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -43,13 +43,17 @@ import { Component, Vue } from "vue-property-decorator";
 })
 export default class Home extends Vue {
   private active = 0;
+
+  // 跳转sub-one
+  gotoSubOne() {
+    history.pushState(null, "sub-one", "/sub-one");
+  }
 }
 </script>
 
 <style lang="less" scoped>
 .home-model {
   width: 100%;
-  height: 100vh;
   padding: 10px;
 }
 .my-swipe .van-swipe-item {
@@ -57,6 +61,6 @@ export default class Home extends Vue {
   font-size: 20px;
   line-height: 150px;
   text-align: center;
-  background-color: #39a9ed;
+  background-color: #2abc6d;
 }
 </style>
