@@ -28,6 +28,8 @@ import {
   Radio,
   Checkbox,
   CheckboxGroup,
+  Grid,
+  GridItem,
   Toast,
   Tab,
   Tabs,
@@ -76,6 +78,8 @@ Vue.use(Radio);
 Vue.use(RadioGroup);
 Vue.use(Checkbox);
 Vue.use(CheckboxGroup);
+Vue.use(Grid);
+Vue.use(GridItem);
 Vue.use(Toast);
 Vue.use(Tab);
 Vue.use(Tabs);
