@@ -2,6 +2,11 @@ const path = require("path");
 const merge = require("webpack-merge");
 const { name } = require("../package.json");
 
+// common parse path
+function resolve(dir) {
+  return path.join(__dirname, "./", dir);
+}
+
 module.exports = {
   publicPath: "/subapp/sub-home",
   transpileDependencies: ["common"],
@@ -37,27 +42,14 @@ module.exports = {
     // 修复HMR
     config.resolve.symlinks(false);
 
-    // config.module
-    //   .rule("ts")
-    //   .use("ts-loader")
-    //   .tap((options) => {
-    //     options = merge(options, {
-    //       transpileOnly: true,
-    //       getCustomTransformers: () => ({
-    //         before: [
-    //           tsImportPluginFactory({
-    //             libraryName: "vant",
-    //             libraryDirectory: "es",
-    //             style: (name) => `${name}/style/less`,
-    //           }),
-    //         ],
-    //       }),
-    //       compilerOptions: {
-    //         module: "es2015",
-    //       },
-    //     });
-    //     return options;
-    //   });
+    // 配置别名  不配置会报错
+    config.resolve.alias
+      .set("@", resolve("src"))
+      .set("@STA", resolve("static"))
+      .set("@ASS", resolve("src/assets"))
+      .set("@API", resolve("src/api"))
+      .set("@COM", resolve("src/components"))
+      .set("@VIE", resolve("src/views"));
 
     return config;
   },

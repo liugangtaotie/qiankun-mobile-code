@@ -25,21 +25,25 @@
       <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text" />
     </van-grid>
 
+    <Footer />
+
     <!--footer-->
-    <van-tabbar v-model="active">
+    <!-- <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o">首页</van-tabbar-item>
       <van-tabbar-item icon="search" badge="5" to="/message">消息</van-tabbar-item>
       <van-tabbar-item icon="friends-o" badge="2" to="/service">服务</van-tabbar-item>
       <van-tabbar-item icon="setting-o" to="/person">我的</van-tabbar-item>
-    </van-tabbar>
+    </van-tabbar> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import Footer from "@COM/Footer.vue";
 
 @Component({
-  components: {},
+  name: "Home",
+  components: { Footer },
 })
 export default class Home extends Vue {
   private active = 0;
