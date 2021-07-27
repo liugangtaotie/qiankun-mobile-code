@@ -25,6 +25,8 @@
       <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text" />
     </van-grid>
 
+    <div class="mt20">从vuex的global module的state： {{ JSON.stringify(user) }}</div>
+
     <Footer :content="0" />
   </div>
 </template>
@@ -38,7 +40,12 @@ import Footer from "@COM/Footer.vue";
   components: { Footer },
 })
 export default class Home extends Vue {
-  private active = 0;
+  [x: string]: any;
+  private user = "";
+
+  mounted() {
+    this.user = this.$store.state.global.user.name;
+  }
 
   // 跳转sub-first
   gotoSubOne() {
