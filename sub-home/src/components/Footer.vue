@@ -1,7 +1,7 @@
 <template>
   <!--footer-->
-  <van-tabbar v-model="active">
-    <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+  <van-tabbar v-model="syncedContent">
+    <van-tabbar-item icon="home-o" to="/">首页</van-tabbar-item>
     <van-tabbar-item icon="search" badge="5" to="/message">消息</van-tabbar-item>
     <van-tabbar-item icon="friends-o" badge="2" to="/service">服务</van-tabbar-item>
     <van-tabbar-item icon="setting-o" to="/person">我的</van-tabbar-item>
@@ -9,14 +9,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, PropSync } from "vue-property-decorator";
 
 @Component({
   name: "Footer",
   components: {},
 })
 export default class Footer extends Vue {
-  private active = 0;
+  @PropSync("content", { type: Number, default: 0 })
+  public syncedContent!: Number;
 }
 </script>
 

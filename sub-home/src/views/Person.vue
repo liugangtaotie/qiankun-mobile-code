@@ -7,5 +7,21 @@
     <h1>This is an about person</h1>
     <h1>This is an about person</h1>
     <h1>This is an about person</h1>
+
+    <Footer :content="3" />
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import Footer from "@COM/Footer.vue";
+
+@Component({
+  name: "Person",
+  components: { Footer },
+})
+export default class Person extends Vue {
+  private active = 0;
+}
+</script>
+
