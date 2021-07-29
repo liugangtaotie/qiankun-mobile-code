@@ -25,7 +25,7 @@
       <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text" />
     </van-grid>
 
-    <div class="mt20">从vuex的global module的state： {{ JSON.stringify(user) }}</div>
+    <div class="mt20">从vuex的global module中获取的state： {{ JSON.stringify(user) }}</div>
 
     <Footer :content="0" />
   </div>
