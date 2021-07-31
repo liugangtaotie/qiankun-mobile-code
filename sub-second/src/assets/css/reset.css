@@ -33,7 +33,7 @@ button,
 input,
 select,
 textarea {
-  font: 12px/1 Lucida Grande, 'Microsoft YaHei', "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  font: 12px/1 Lucida Grande, 'Microsoft YaHei', "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
 }
 
 h1 {
@@ -97,8 +97,8 @@ img {
 }
 
 table {
-  border-spacing: 0;
   border-collapse: collapse;
+  border-spacing: 0;
 }
 
 hr {
@@ -144,18 +144,18 @@ hr {
   color: #333;
 }
 
-/*修改tab选中的下标的位置*/
+/* 修改tab选中的下标的位置 */
 .van-tabs__line {
   z-index: 0 !important;
 }
 
-/*清除浮动*/
+/* 清除浮动 */
 .clearfix::after {
   display: block;
   height: 0;
   clear: both;
-  visibility: hidden;
   content: ".";
+  visibility: hidden;
 }
 
 html,
@@ -170,8 +170,8 @@ html {
 }
 
 body {
-  font-size: 14px;
   min-height: 100%;
+  font-size: 14px;
 }
 
 div {

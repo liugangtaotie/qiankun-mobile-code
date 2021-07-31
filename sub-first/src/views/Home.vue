@@ -32,9 +32,9 @@ export default class Home extends Vue {
   padding: 10px;
 }
 .my-swipe .van-swipe-item {
-  color: #fff;
   font-size: 20px;
   line-height: 150px;
+  color: #fff;
   text-align: center;
   background-color: #2abc6d;
 }

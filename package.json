@@ -1,11 +1,17 @@
 {
-  "name": "qiankun-web-code",
+  "name": "qiankun-mobile-code",
   "version": "0.0.1",
   "description": "qiankun demo",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.1.2",
+    "stylelint": "^13.7.1",
+    "stylelint-config-recess-order": "^2.0.4",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0"
   },
   "scripts": {
     "install": "npm-run-all --serial install:*",
@@ -16,6 +22,7 @@
     "start:sub-first": "cd sub-first && npm start",
     "start:sub-second": "cd sub-second && npm start",
     "start:main": "cd main && npm start",
+    "stylelint": "stylelint **/**/**/**/**/*.{html,vue,css,sass,scss,less} --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,7 +32,10 @@
   "keywords": [
     "qiankun",
     "qiankun-example",
-    "demo"
+    "qiankun-mobile-code",
+    "vue2",
+    "vite2",
+    "typescript"
   ],
   "author": "wuxiang",
   "license": "MIT",
