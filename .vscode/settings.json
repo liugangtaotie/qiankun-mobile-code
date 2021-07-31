@@ -32,7 +32,7 @@
   "workbench.settings.editor": "json",
   "terminal.integrated.rendererType": "dom",
   "vscode_custom_css.policy": true,
-  "powermode.enabled": true, // 开启 Power Mode
+  "powermode.enabled": false, // 开启 Power Mode
   "powermode.shakeIntensity": 0, // 关闭抖动（喜欢的也可以选择不关闭）
   "powermode.presets": "exploding-rift", // 特效预设，“particles”, “fireworks”, “flames”, “magic”, “clippy”, “simple-rift”, “exploding-rift”.
   "[css]": {

@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "iconfont";
+  src:
+    url('iconfont.woff?t=1500951445071') format('woff'), /* chrome, firefox */
+    url('iconfont.ttf?t=1500951445071') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('iconfont.svg?t=1500951445071#iconfont') format('svg');
+
+  /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-camera::before {
+  content: "\e61e";
+}
+
+.icon-xiangce::before {
+  content: "\e656";
+}
+
+.icon-smile::before {
+  content: "\e621";
+}
+
+.icon-jia::before {
+  content: "\e501";
+}
+
+.icon-jianpan::before {
+  content: "\e676";
+}
+
+.icon-Voice::before {
+  content: "\e654";
+}
+
+.icon-voice-reverse::before {
+  content: "\e630";
+}
+
+.icon-voice::before {
+  content: "\e622";
+}
+
+.icon-message-voice-right::before {
+  content: "\e610";
+}
+
+.icon-message-voice-left::before {
+  content: "\e613";
+}

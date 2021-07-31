@@ -1,0 +1,469 @@
+/* for 1080+ px width screen */
+@media only screen and (min-device-width: 1080px),
+  only screen and (min-width: 1080px) {
+
+  html,
+  body {
+    font-size: 170px;
+  }
+}
+
+/* for 1080 px width screen */
+@media only screen and (max-device-width: 1080px),
+  only screen and (max-width: 1080px) {
+
+  html,
+  body {
+    font-size: 144px;
+  }
+}
+
+/* for 800 px width screen */
+@media only screen and (max-device-width: 800px),
+  only screen and (max-width: 800px) {
+
+  html,
+  body {
+    font-size: 107px;
+  }
+}
+
+/* for 720 px width screen */
+@media only screen and (max-device-width: 720px),
+  only screen and (max-width: 720px) {
+
+  html,
+  body {
+    font-size: 96px;
+  }
+}
+
+/* for 640 px width screen */
+@media only screen and (max-device-width: 640px),
+  only screen and (max-width: 640px) {
+
+  html,
+  body {
+    font-size: 85px;
+  }
+}
+
+/* for 540 px width screen */
+@media only screen and (max-device-width: 540px),
+  only screen and (max-width: 540px) {
+
+  html,
+  body {
+    font-size: 72px;
+  }
+}
+
+/* for 480 px width screen */
+@media only screen and (max-device-width: 480px),
+  only screen and (max-width: 480px) {
+
+  html,
+  body {
+    font-size: 64px;
+  }
+}
+
+/* for 414 px width screen */
+@media only screen and (max-width: 414px),
+  only screen and (max-device-width: 414px) {
+
+  html,
+  body {
+    font-size: 55.2px;
+  }
+}
+
+/* for 375 px width screen */
+@media only screen and (max-width: 375px),
+  only screen and (max-device-width: 375px) {
+
+  html,
+  body {
+    font-size: 50px;
+  }
+}
+
+/* for 320 px width screen */
+@media only screen and (max-width: 320px),
+  only screen and (max-device-width: 320px) {
+
+  html,
+  body {
+    font-size: 42.7px;
+  }
+}
+
+.no-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  color: #928f8a;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex_center {
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+}
+
+.flex_vcenter {
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.flex_between {
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.flex_direction {
+  flex-direction: column;
+}
+
+.flex_end {
+  justify-content: flex-end;
+}
+
+.wrap {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.space-around {
+  justify-content: space-between;
+}
+
+.flex_around {
+  justify-content: space-around;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flexgrow1 {
+  flex: 1;
+}
+
+.flexgrow2 {
+  flex: 2;
+}
+
+.flexgrow3 {
+  flex: 3;
+}
+
+.flexgrow4 {
+  flex: 4;
+}
+
+.flexgrow5 {
+  flex: 5;
+}
+
+.f40 {
+  font-size: 40px;
+}
+
+.f30 {
+  font-size: 30px;
+}
+
+.f20 {
+  font-size: 20px;
+}
+
+.f16 {
+  font-size: 16px;
+}
+
+.f14 {
+  font-size: 14px;
+}
+
+.f12 {
+  font-size: 12px;
+}
+
+.f10 {
+  font-size: 10px;
+}
+
+.bgwhite {
+  background-color: #fff;
+}
+
+.bgGreen {
+  background-color: #e5f4ec;
+}
+
+.lineHeight4 {
+  line-height: 20px;
+}
+
+.lineHeight5 {
+  line-height: 25px;
+}
+
+.t0 {
+  color: #333;
+}
+
+.t1 {
+  color: #2abc6d;
+}
+
+.t2 {
+  color: #f60;
+}
+
+.t3 {
+  color: #ccc;
+}
+
+.t4 {
+  color: #666;
+}
+
+.t5 {
+  color: #fff;
+}
+
+.mt2 {
+  margin-top: 2px;
+}
+
+.mt5 {
+  margin-top: 5px;
+}
+
+.mt8 {
+  margin-top: 8px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt50 {
+  margin-top: 50px;
+}
+
+.mt100 {
+  margin-top: 100px;
+}
+
+.mt150 {
+  margin-top: 125px;
+}
+
+.ml5 {
+  margin-left: 5px;
+}
+
+.ml10 {
+  margin-left: 10px;
+}
+
+.ml20 {
+  margin-left: 20px;
+}
+
+.mr5 {
+  margin-right: 5px;
+}
+
+.mr8 {
+  margin-right: 4px;
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.mr20 {
+  margin-right: 20px;
+}
+
+.mr30 {
+  margin-right: 30px;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.mb50 {
+  margin-bottom: 50px;
+}
+
+.pd5 {
+  padding: 5px;
+}
+
+.pd10 {
+  padding: 10px;
+}
+
+.pd20 {
+  padding: 20px;
+}
+
+.v-middle {
+  vertical-align: middle;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.hide {
+  display: none;
+}
+
+.text-decoration {
+  text-decoration: line-through;
+}
+
+.header-theme-white {
+  color: #333 !important;
+  background: #fff !important;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.header-theme-main {
+  color: #fff !important;
+  background: #12c867 !important;
+}
+
+.text-overflow {
+  height: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tips-warning {
+  padding: 10px;
+  color: #f50;
+  background: #fefad2;
+}
+
+.border-radius {
+  border-radius: 4px;
+}
+
+.border-button {
+  color: #32a962 !important;
+  border-color: #32a962 !important;
+}
+
+.bb1 {
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.no-radius {
+  border-radius: 0;
+}
+
+.radius {
+  border-radius: 4px;
+}
+
+.input,
+.button {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.checkbox:checked {
+  background-size: cover;
+}
+
+.no_content {
+  width: 100%;
+  height: 1px;
+  background-color: #f2f2f2;
+}
+
+.no_content_two {
+  width: 100%;
+  height: 10px;
+  background-color: #f2f2f2;
+}
+
+.bs_field_number_model {
+  width: 100%;
+  height: 14px;
+  padding-right: 10px;
+  padding-bottom: 25px;
+  margin-top: 10px;
+  color: #adadad;
+  text-align: right;
+}
+
+.squareWhite {
+  position: absolute;
+  left: -4px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-top: 1px solid #fff;
+  border-right: 1px solid #fff;
+  transform: rotate(45deg);
+}

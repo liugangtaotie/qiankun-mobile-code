@@ -1,16 +1,16 @@
 const path = require("path");
 const merge = require("webpack-merge");
-const { name } = require("../package.json");
+const packageName = require("./package.json").name;
 
 module.exports = {
-  publicPath: "/subapp/sub-first",
+  publicPath: "./",
+  outputDir: "../../qiankun/main/child/sub-first",
   transpileDependencies: ["common"],
   configureWebpack: {
     output: {
-      // 把子应用打包成 umd 库格式
-      library: `${name}-[name]`,
+      library: `${packageName}`,
       libraryTarget: "umd",
-      jsonpFunction: `webpackJsonp_${name}`,
+      jsonpFunction: `webpackJsonp_${packageName}`,
     },
   },
 
@@ -26,7 +26,10 @@ module.exports = {
           // 直接覆盖变量
           // 'tabs-default-color': 'blue',
           // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
-          hack: `true; @import "${path.join(__dirname, "./src/assets/css/theme.less")}"`,
+          hack: `true; @import "${path.join(
+            __dirname,
+            "./src/assets/css/theme.less"
+          )}"`,
         },
       },
     },
@@ -37,32 +40,10 @@ module.exports = {
     // 修复HMR
     config.resolve.symlinks(false);
 
-    // config.module
-    //   .rule("ts")
-    //   .use("ts-loader")
-    //   .tap((options) => {
-    //     options = merge(options, {
-    //       transpileOnly: true,
-    //       getCustomTransformers: () => ({
-    //         before: [
-    //           tsImportPluginFactory({
-    //             libraryName: "vant",
-    //             libraryDirectory: "es",
-    //             style: (name) => `${name}/style/less`,
-    //           }),
-    //         ],
-    //       }),
-    //       compilerOptions: {
-    //         module: "es2015",
-    //       },
-    //     });
-    //     return options;
-    //   });
-
     return config;
   },
   devServer: {
-    port: 7799,
+    port: 7000,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },

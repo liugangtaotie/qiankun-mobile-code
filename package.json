@@ -1,5 +1,5 @@
 {
-  "name": "qiankun-example",
+  "name": "qiankun-web-code",
   "version": "0.0.1",
   "description": "qiankun demo",
   "main": "index.js",
@@ -10,13 +10,11 @@
   "scripts": {
     "install": "npm-run-all --serial install:*",
     "install:main": "cd main && npm i",
-    "install:sub-home": "cd sub-vue && npm i",
-    "install:sub-one": "cd sub-one && npm i",
-    "install:sub-react": "cd sub-react && npm i",
+    "install:sub-first": "cd sub-first && npm i",
+    "install:sub-second": "cd sub-second && npm i",
     "start": "npm-run-all --parallel start:*",
-    "start:sub-home": "cd sub-home && npm start",
     "start:sub-first": "cd sub-first && npm start",
-    "start:sub-react": "cd sub-react && npm start",
+    "start:sub-second": "cd sub-second && npm start",
     "start:main": "cd main && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

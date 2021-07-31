@@ -1,143 +1,59 @@
 <template>
-  <div class="layout-wrapper">
-    <div id="subapp-viewport"></div>
+  <div id="app">
+    <!-- <keep-alive><router-view ></router-view></keep-alive> -->
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive"></router-view>
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
+    <div id="mainwrapper"></div>
+
+    <!-- loading -->
+    <BsLoading />
   </div>
 </template>
 
-<script>
-import NProgress from "nprogress";
-import microApps from "./micro-app";
-import store from "@/store";
-export default {
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import BsLoading from "@COM/BsLoading.vue";
+
+@Component({
   name: "App",
-  data() {
-    return {
-      isLoading: true,
-      microApps,
-      current: "/sub-home/",
-    };
-  },
-  computed: {
-    user() {
-      return store.getGlobalState("user");
-    },
-  },
-  watch: {
-    isLoading(val) {
-      if (val) {
-        NProgress.start();
-      } else {
-        this.$nextTick(() => {
-          NProgress.done();
-        });
-      }
-    },
-  },
-  components: {},
-  methods: {
-    goto(item) {
-      history.pushState(null, item.activeRule, item.activeRule);
-      // this.current = item.name
-    },
-    bindCurrent() {
-      const path = window.location.pathname;
-      if (this.microApps.findIndex((item) => item.activeRule === path) >= 0) {
-        this.current = path;
-      }
-    },
-    listenRouterChange() {
-      const _wr = function (type) {
-        const orig = history[type];
-        return function () {
-          const rv = orig.apply(this, arguments);
-          const e = new Event(type);
-          e.arguments = arguments;
-          window.dispatchEvent(e);
-          return rv;
-        };
-      };
-      history.pushState = _wr("pushState");
+  components: { BsLoading },
+})
+export default class App extends Vue {
+  // mixins: [eventMixin],
+  private isFirst: Boolean = true;
 
-      window.addEventListener("pushState", this.bindCurrent);
-      window.addEventListener("popstate", this.bindCurrent);
+  updated() {
+    if (this.isFirst) {
+      // var element: any = document.getElementById("__loading");
+      const elementMain: any = document.getElementById("__mainLoading");
+      // if (element) {
+      //   element.outerHTML = "";
+      // }
+      if (elementMain) {
+        elementMain.outerHTML = "";
+      }
+      this.isFirst = false;
+    }
+  }
 
-      this.$once("hook:beforeDestroy", () => {
-        window.removeEventListener("pushState", this.bindCurrent);
-        window.removeEventListener("popstate", this.bindCurrent);
-      });
-    },
-  },
   created() {
-    this.bindCurrent();
-    NProgress.start();
-  },
-  mounted() {
-    this.listenRouterChange();
-  },
-};
+    sessionStorage.removeItem("hideLoading");
+    window.__hideLoading__ = false;
+  }
+}
 </script>
 
-<style lang="scss">
-html,
-body {
-  margin: 0 !important;
+<style lang='less' scoped>
+* {
+  box-sizing: border-box;
   padding: 0;
+  margin: 0;
 }
-.github-corner:hover .octo-arm {
-  animation: octocat-wave 560ms ease-in-out;
-}
-@keyframes octocat-wave {
-  0%,
-  100% {
-    transform: rotate(0);
-  }
-  20%,
-  60% {
-    transform: rotate(-25deg);
-  }
-  40%,
-  80% {
-    transform: rotate(10deg);
-  }
-}
-@media (max-width: 500px) {
-  .github-corner:hover .octo-arm {
-    animation: none;
-  }
-  .github-corner .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
-  }
-}
-.layout-wrapper {
-  .layout-header {
-    height: 50px;
-    width: 100%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    line-height: 50px;
-    position: relative;
-    .logo {
-      float: left;
-      margin: 0 50px;
-    }
-    .sub-apps {
-      list-style: none;
-      margin: 0;
-      li {
-        list-style: none;
-        display: inline-block;
-        padding: 0 20px;
-        cursor: pointer;
-        &.active {
-          color: #42b983;
-          text-decoration: underline;
-        }
-      }
-    }
-    .userinfo {
-      position: absolute;
-      right: 100px;
-      top: 0;
-    }
-  }
+
+#app {
+  font-size: 12px;
 }
 </style>
+
