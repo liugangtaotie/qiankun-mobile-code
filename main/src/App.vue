@@ -5,7 +5,7 @@
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
     <router-view v-if="!$route.meta.keepAlive"></router-view>
-    <div id="mainwrapper"></div>
+    <div id="subapp-viewport"></div>
 
     <!-- loading -->
     <BsLoading />

@@ -14,10 +14,10 @@
 
     <van-grid class="flex flex_around" :gutter="10" :column-num="3">
       <van-grid-item
-        v-for="(item, index) in modeuleList"
+        v-for="(item, index) in microApps"
         :key="index"
         icon="photo-o"
-        :text="item.title"
+        :text="item.name"
         @click="$router.push(item.path)"
       />
     </van-grid>
@@ -42,6 +42,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { registerMicroApps, start } from "qiankun";
+import microApps from "../../micro-app";
 
 @Component({
   name: "Home",
@@ -52,33 +53,9 @@ export default class Home extends Vue {
   private num: number = 0;
   private active: number = 0;
   private activeTab: number = 0;
+  private microApps = JSON.parse(JSON.stringify(microApps));
 
   activeModule = ""; // 系统模块
-
-  modeuleList = [
-    {
-      developmentEntry: "//localhost:7000/",
-      enabled: true,
-      name: "sub-first",
-      normal: "images/module/dvs-village-normal.png",
-      path: "/sub-first",
-      productionEntry: "/child/sub-first/",
-      selected: "images/module/dvs-village-selected.png",
-      systemId: "sub-first",
-      title: "sub-first",
-    },
-    {
-      developmentEntry: "//localhost:5000/",
-      enabled: true,
-      name: "sub-second",
-      normal: "images/module/dvs-village-normal.png",
-      path: "/sub-second",
-      productionEntry: "/child/sub-second/",
-      selected: "images/module/dvs-village-selected.png",
-      systemId: "sub-second",
-      title: "sub-second",
-    },
-  ];
 
   created() {}
 
@@ -87,24 +64,19 @@ export default class Home extends Vue {
   mounted() {
     this.num = this.$store.state.moduleMain.count;
 
-    const array = [
-      {
-        container: "#mainwrapper",
-        entry: "//localhost:7000/",
-        name: "sub-first",
-        activeRule: this.getActiveRule("#/sub-first"),
-      },
-      {
-        container: "#mainwrapper",
-        entry: "//localhost:5000/",
-        name: "sub-second",
-        activeRule: this.getActiveRule("#/sub-second"),
-      },
-    ];
+    let microAppsArr = [];
+    microApps.forEach((item) => {
+      microAppsArr.push({
+        container: item.container,
+        entry: item.entry,
+        name: item.name,
+        activeRule: item.activeRule,
+      });
+    });
 
     console.log("start loading");
     // TODO  在主应用中注册微应用
-    registerMicroApps([...array]);
+    registerMicroApps([...microAppsArr]);
 
     // TODO 启动微应用
     start({

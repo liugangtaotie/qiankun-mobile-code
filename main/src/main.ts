@@ -23,6 +23,8 @@ import resDefaultImg from '@ASS/images/defaultPhoto.png'
 import docDefaultImg from '@ASS/images/defaultPhoto.png'
 import sealDefaultImg from '@ASS/images/defaultPhoto.png'
 
+import "nprogress/nprogress.css";
+
 // 添加图片预览组件
 import preview from "vue-photo-preview";
 import "vue-photo-preview/dist/skin.css";
