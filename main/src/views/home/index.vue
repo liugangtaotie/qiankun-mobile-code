@@ -11,18 +11,6 @@
       <van-swipe-item>4</van-swipe-item>
     </van-swipe>
     <van-divider />
-    <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
-      >home,点击跳转about</van-button
-    >
-    <div class="flex flex_center single">
-      store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
-    </div>
-    <van-button class="flex mt10" type="primary" @click="onClickAdd">add +</van-button>
-    <van-button style="margin-left: 10px" class="flex mt10" type="primary" @click="onClickSub"
-      >dec -</van-button
-    >
-
-    <van-divider />
 
     <van-grid class="flex flex_around" :gutter="10" :column-num="3">
       <van-grid-item
@@ -33,6 +21,19 @@
         @click="$router.push(item.path)"
       />
     </van-grid>
+
+    <van-divider />
+
+    <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
+      >home,点击跳转about</van-button
+    >
+    <div class="flex flex_center single">
+      store的count数据 <span class="ml20 f30 t2">{{ $store.state.moduleMain.count }}</span>
+    </div>
+    <van-button class="flex mt10" type="primary" @click="onClickAdd">add +</van-button>
+    <van-button style="margin-left: 10px" class="flex mt10" type="primary" @click="onClickSub"
+      >dec -</van-button
+    >
 
     <my-footer :active="0"></my-footer>
   </div>
@@ -46,6 +47,7 @@ import { registerMicroApps, start } from "qiankun";
   name: "Home",
 })
 export default class Home extends Vue {
+  [x: string]: any;
   private signToShow: Boolean = false; //
   private num: number = 0;
   private active: number = 0;

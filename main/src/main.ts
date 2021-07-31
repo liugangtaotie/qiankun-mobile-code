@@ -157,8 +157,8 @@ Vue.use(VueLazyload, {
 /**
  * 导航钩子
  */
-router.beforeEach((to, from, next) => {
-  document.title = to.meta.title || "vite2+vue2+ts";
+router.beforeEach((to:any, from, next) => {
+  document.title = to.meta.title || "qiankun-mobile-code";
   return next();
 });
 

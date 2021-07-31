@@ -16,6 +16,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
   name: "MyFooter",
 })
 export default class MyFooter extends Vue {
+  [x: string]: any;
   @Prop({ type: Number, default: 0 }) active;
   private activeIndex = 0;
 
