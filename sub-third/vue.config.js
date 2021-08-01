@@ -4,7 +4,7 @@ const packageName = require("./package.json").name;
 
 module.exports = {
   publicPath: "./",
-  outputDir: "../../qiankun/main/child/sub-second",
+  outputDir: "../../qiankun/main/child/sub-third",
   transpileDependencies: ["common"],
   configureWebpack: {
     output: {
@@ -26,10 +26,7 @@ module.exports = {
           // 直接覆盖变量
           // 'tabs-default-color': 'blue',
           // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
-          hack: `true; @import "${path.join(
-            __dirname,
-            "./src/assets/css/theme.less"
-          )}"`,
+          hack: `true; @import "${path.join(__dirname, "./src/assets/css/theme.less")}"`,
         },
       },
     },
@@ -43,7 +40,7 @@ module.exports = {
     return config;
   },
   devServer: {
-    port: 5000,
+    port: 4000,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },

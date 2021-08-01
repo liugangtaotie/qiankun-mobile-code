@@ -20,7 +20,7 @@
     "install:sub-second": "cd sub-second && npm i",
     "start": "npm-run-all --parallel start:*",
     "start:sub-first": "cd sub-first && npm start",
-    "start:sub-second": "cd sub-second && npm start",
+    "start:sub-third": "cd sub-third && npm start",
     "start:main": "cd main && npm start",
     "stylelint": "stylelint **/**/**/**/**/*.{html,vue,css,sass,scss,less} --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
