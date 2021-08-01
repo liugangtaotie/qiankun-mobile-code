@@ -8,17 +8,16 @@
     <div id="subapp-viewport"></div>
 
     <!-- loading -->
-    <BsLoading />
+    <!-- <BsLoading /> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import BsLoading from "@COM/BsLoading.vue";
 
 @Component({
   name: "App",
-  components: { BsLoading },
+  components: {},
 })
 export default class App extends Vue {
   // mixins: [eventMixin],

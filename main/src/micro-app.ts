@@ -6,13 +6,11 @@ function getActiveRule(hash: any) {
 
 const microApps = [
   {
-    container: "#subapp-viewport",
     entry: "//localhost:7000/",
     name: "sub-first",
     activeRule: getActiveRule("#/sub-first"),
   },
   {
-    container: "#subapp-viewport",
     entry: "//localhost:5000/",
     name: "sub-second",
     activeRule: getActiveRule("#/sub-second"),
@@ -26,7 +24,7 @@ const apps = microApps.map((item) => {
     path: "/" + item.name,
     props: {
       routerBase: item.activeRule, // 下发基础路由
-      getGlobalState: "", // 下发getGlobalState方法
+      getGlobalState: store.getGlobalState, // 下发getGlobalState方法
     },
     developmentEntry: item.entry,
     productionEntry: "/child/" + item.name,
