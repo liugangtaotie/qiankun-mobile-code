@@ -26,7 +26,16 @@
     </van-grid>
 
     <div class="mt20">从vuex的global module中获取的state： {{ JSON.stringify(user) }}</div>
+    <div class="flex flex_center single">
+      global 中 store的count数据 <span class="ml20 f30 t2">{{ num }}</span>
+    </div>
 
+    <div class="flex flex_center">
+      <van-button class="flex mt10" type="primary" @click="onClickAdd">add +</van-button>
+      <van-button style="margin-left: 10px" class="flex mt10" type="primary" @click="onClickSub"
+        >dec -</van-button
+      >
+    </div>
     <Footer :content="0" />
   </div>
 </template>
@@ -42,8 +51,11 @@ import Footer from "@COM/Footer.vue";
 export default class Home extends Vue {
   [x: string]: any;
   private user = "";
+  private num = 0;
 
   mounted() {
+    this.num = this.$store.state.global.num;
+
     this.user = this.$store.state.global.user.name;
   }
 
@@ -54,6 +66,16 @@ export default class Home extends Vue {
 
   gotoSubReact() {
     history.pushState(null, "sub-react", "/sub-react");
+  }
+
+  // +1
+  onClickAdd() {
+    this.$store.commit("global/setGlobalState", { num: ++this.num });
+  }
+
+  // -1
+  onClickSub() {
+    this.$store.commit("global/setGlobalState", { num: --this.num });
   }
 }
 </script>

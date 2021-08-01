@@ -1,5 +1,20 @@
 <template>
-  <div>
+  <div class="home-model">
+    <van-notice-bar
+      text="Technology is the common soul of the people who developed it."
+      left-icon="volume-o"
+    />
+
+    <div class="flex flex_center single mt10">
+      global 中 store的count数据 <span class="ml20 f30 t2">{{ num }}</span>
+    </div>
+
+    <div class="flex flex_center">
+      <van-button class="flex mt10" type="primary" @click="onClickAdd">add +</van-button>
+      <van-button style="margin-left: 10px" class="flex mt10" type="primary" @click="onClickSub"
+        >dec -</van-button
+      >
+    </div>
     <van-grid class="mt10" :gutter="10">
       <van-grid-item v-for="value in 18" :key="value" icon="photo-o" text="Text" />
     </van-grid>
@@ -13,7 +28,14 @@ import { Component, Vue } from "vue-property-decorator";
   components: {},
 })
 export default class Home extends Vue {
+  [x: string]: any;
   private active = 0;
+
+  private num = 0;
+
+  mounted() {
+    this.num = this.$store.state.global.num;
+  }
 
   // 跳转sub-one
   gotoSubOne() {
@@ -22,6 +44,16 @@ export default class Home extends Vue {
 
   gotoSubReact() {
     history.pushState(null, "sub-react", "/sub-react");
+  }
+
+  // +1
+  onClickAdd() {
+    this.$store.commit("global/setGlobalState", { num: ++this.num });
+  }
+
+  // -1
+  onClickSub() {
+    this.$store.commit("global/setGlobalState", { num: --this.num });
   }
 }
 </script>
