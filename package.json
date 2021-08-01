@@ -10,8 +10,8 @@
   "scripts": {
     "install": "npm-run-all --serial install:*",
     "install:main": "cd main && npm i",
-    "install:sub-home": "cd sub-vue && npm i",
-    "install:sub-one": "cd sub-one && npm i",
+    "install:sub-home": "cd sub-home && npm i",
+    "install:sub-first": "cd sub-first && npm i",
     "install:sub-react": "cd sub-react && npm i",
     "start": "npm-run-all --parallel start:*",
     "start:sub-home": "cd sub-home && npm start",
