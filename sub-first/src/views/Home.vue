@@ -26,7 +26,7 @@
     <van-divider />
 
     <van-grid class="mt10" :gutter="10">
-      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="Text" />
+      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="Text1" />
     </van-grid>
   </div>
 </template>

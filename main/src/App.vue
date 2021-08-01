@@ -41,6 +41,7 @@ export default {
     },
     bindCurrent() {
       const path = window.location.pathname;
+      console.info("xxxxxxxx");
       if (this.microApps.findIndex((item) => item.activeRule === path) >= 0) {
         this.current = path;
       }
