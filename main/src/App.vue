@@ -47,6 +47,7 @@ export default {
       }
     },
     listenRouterChange() {
+      console.info("listenRouterChange");
       const _wr = function (type) {
         const orig = history[type];
         return function () {
