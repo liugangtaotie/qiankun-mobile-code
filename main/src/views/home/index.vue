@@ -28,7 +28,7 @@
       >home,点击跳转about</van-button
     >
     <div class="flex flex_center single">
-      store的count数据 <span class="ml20 f30 t2">{{ $store.getGlobalState("num") }}</span>
+      store的count数据 <span class="ml20 f30 t2">{{ num }}</span>
     </div>
     <van-button class="flex mt10" type="primary" @click="onClickAdd">add +</van-button>
     <van-button style="margin-left: 10px" class="flex mt10" type="primary" @click="onClickSub"
@@ -50,7 +50,7 @@ import microApps from "../../micro-app";
 export default class Home extends Vue {
   [x: string]: any;
   private signToShow: Boolean = false; //
-  private num: number = 0;
+  private num: number = this.$store.getGlobalState("num");
   private active: number = 0;
   private activeTab: number = 0;
   private microApps = JSON.parse(JSON.stringify(microApps));
@@ -62,9 +62,6 @@ export default class Home extends Vue {
   getActiveRule = (hash: any) => (location: any) => location.hash.startsWith(hash);
 
   mounted() {
-    // this.num = this.$store.state.moduleMain.count;
-    console.info("ksksksk", this.$store.getGlobalState("num"));
-
     let microAppsArr = [];
     microApps.forEach((item) => {
       microAppsArr.push({
@@ -91,12 +88,12 @@ export default class Home extends Vue {
 
   // +1
   onClickAdd() {
-    this.$store.commit("moduleMain/increment");
+    this.$store.setGlobalState({ num: ++this.num });
   }
 
   // -1
   onClickSub() {
-    this.$store.commit("moduleMain/subtraction");
+    this.$store.setGlobalState({ num: --this.num });
   }
 }
 </script>

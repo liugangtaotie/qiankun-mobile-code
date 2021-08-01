@@ -36,7 +36,13 @@
     "eslint-plugin-vue": "^6.2.2",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "postcss-px-to-viewport": "^1.1.1",
     "prettier": "^2.2.1",
+    "stylelint": "^13.7.1",
+    "stylelint-config-recess-order": "^2.0.4",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-scss": "^3.18.0",
     "typescript": "~4.1.5",
     "vue-template-compiler": "^2.6.11"
   },

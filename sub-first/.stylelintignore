@@ -1,0 +1,5 @@
+vite.config.js
+src/store/index.ts
+src/assets/css/reset.css
+src/common/assets/font/iconfont.css
+src/assets/css/sprites-generated.css
