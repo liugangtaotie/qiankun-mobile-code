@@ -15,8 +15,18 @@
         >dec -</van-button
       >
     </div>
+
+    <van-divider />
+
+    <van-grid class="flex flex_around" :gutter="10" :column-num="3">
+      <van-grid-item icon="photo-o" text="sub-home" @click="gotoSubHome" />
+      <van-grid-item icon="photo-o" text="sub-react" @click="gotoSubReact" />
+    </van-grid>
+
+    <van-divider />
+
     <van-grid class="mt10" :gutter="10">
-      <van-grid-item v-for="value in 18" :key="value" icon="photo-o" text="Text" />
+      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="Text" />
     </van-grid>
   </div>
 </template>
@@ -37,9 +47,9 @@ export default class Home extends Vue {
     this.num = this.$store.state.global.num;
   }
 
-  // 跳转sub-one
-  gotoSubOne() {
-    history.pushState(null, "sub-one", "/sub-one");
+  // 跳转sub-home
+  gotoSubHome() {
+    history.pushState(null, "sub-home", "/sub-home");
   }
 
   gotoSubReact() {

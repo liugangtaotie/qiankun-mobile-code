@@ -22,10 +22,13 @@
     </van-grid>
 
     <van-grid class="mt10" :gutter="10">
-      <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text" />
+      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="Text" />
     </van-grid>
 
     <div class="mt20">从vuex的global module中获取的state： {{ JSON.stringify(user) }}</div>
+
+    <van-divider />
+
     <div class="flex flex_center single">
       global 中 store的count数据 <span class="ml20 f30 t2">{{ num }}</span>
     </div>
