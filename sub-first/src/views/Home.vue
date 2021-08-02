@@ -6,7 +6,7 @@
     />
 
     <div class="flex flex_center single mt10">
-      global 中 store的count数据 <span class="ml20 f30 t2">{{ num }}</span>
+      global中store的count数据 <span class="ml20 f30 t2">{{ num }}</span>
     </div>
 
     <div class="flex flex_center">
