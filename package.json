@@ -1,5 +1,5 @@
 {
-  "name": "qiankun-example",
+  "name": "qiankun-mobile-code",
   "version": "0.0.1",
   "description": "qiankun demo",
   "main": "index.js",
@@ -11,9 +11,7 @@
     "install": "npm-run-all --serial install:*",
     "install:main": "cd main && npm i",
     "install:map-app": "cd map-app && npm i",
-    "install:react-app": "cd react-app && npm i",
     "install:webpack-app": "cd webpack-app && npm i",
-    "install:webpack-app-ts": "cd webpack-app-ts && npm i",
     "start": "npm-run-all --parallel start:*",
     "start:map-app": "cd map-app && npm start",
     "start:webpack-app": "cd webpack-app && npm start",
@@ -26,7 +24,7 @@
   },
   "keywords": [
     "qiankun",
-    "qiankun-example",
+    "qiankun-mobile-code",
     "demo"
   ],
   "author": "wuxiang",
