@@ -1,86 +1,67 @@
 {
   "compilerOptions": {
-    // 输出目录
-    "outDir": "./output",
-    // 是否包含可以用于 debug 的 sourceMap
-    "sourceMap": true,
-    "traceResolution": true,
-    // 以严格模式解析
-    "strict": true,
-    // 采用的模块系统
-    "module": "esnext",
-    // 如何处理模块
-    "moduleResolution": "node",
-    // 编译输出目标 ES 版本
-    "target": "esnext",
-    // 允许从没有设置默认导出的模块中默认导入
-    "allowSyntheticDefaultImports": true,
-    // 将每个文件作为单独的模块
-    "isolatedModules": false,
-    // 启用装饰器
-    "experimentalDecorators": true,
-    // 启用设计类型元数据（用于反射）
-    "emitDecoratorMetadata": true,
-    // 在表达式和声明上有隐含的any类型时报错
-    "noImplicitAny": false,
-    // 不是函数的所有返回路径都有返回值时报错。
-    "noImplicitReturns": true,
-    // 从 tslib 导入外部帮助库: 比如__extends，__rest等
-    "importHelpers": true,
-    // 编译过程中打印文件名
-    "listFiles": true,
-    // 移除注释
-    "removeComments": true,
-    "suppressImplicitAnyIndexErrors": true,
-    // 允许编译javascript文件
+
     "allowJs": true,
-    "jsx": "preserve",
-    "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+    // 允许从没有设置默认导出的模块中默认导入。这并不影响代码的输出，仅为了类型检查。
+    "allowSyntheticDefaultImports": true,
+
+    // 解析非相对模块名的基准目录
     "baseUrl": ".",
+
+    "esModuleInterop": true,
+
+    // 从 tslib 导入辅助工具函数（比如 __extends， __rest等）
+    "importHelpers": true,
+
+    // 指定生成哪个模块系统代码
+    "module": "esnext",
+
+    // 决定如何处理模块。
+    "moduleResolution": "node",
+
+    // 启用所有严格类型检查选项。
+    // 启用 --strict相当于启用 --noImplicitAny, --noImplicitThis, --alwaysStrict，
+    // --strictNullChecks和 --strictFunctionTypes和--strictPropertyInitialization。
+    "strict": true,
+
+    // 生成相应的 .map文件。
+    "sourceMap": true,
+
+    // 忽略所有的声明文件（ *.d.ts）的类型检查。
+    "skipLibCheck": true,
+
+    // 指定ECMAScript目标版本
+    "target": "esnext",
+
+    // 要包含的类型声明文件名列表
     "types": [
-      "node", // 添加这行
-      "vite/client"
+
     ],
+
+    "isolatedModules": true,
+
+    // 模块名到基于 baseUrl的路径映射的列表。
     "paths": {
       "@/*": [
         "src/*"
-      ],
-      "@COM/*": [
-        "src/components/*"
-      ],
-      "@VIE/*": [
-        "src/views/*"
-      ],
-      "@ASS/*": [
-        "src/assets/*"
-      ],
-      "@API/*": [
-        "src/api/*"
-      ],
-      "@STA/*": [
-        "static/*"
-      ],
+      ]
     },
+    // 编译过程中需要引入的库文件的列表。
     "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ],
-    /* other options */
-    "typeRoots": [
-      "node_modules/@types" // path to your typings directory (relative to tsconfig.json)
-    ],
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+      "ScriptHost"
+    ]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx",
+    "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules",
-    "src/api/WebIM.ts",
-  ],
+    "node_modules"
+  ]
 }

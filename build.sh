@@ -22,7 +22,7 @@ cd $project_path
 
 #-------------------------2、设置需要编译的项目路径----------------------
 npmbuild_pathArr=(
-  "/e/work/aehyok/github/vue-qiankun/main-vite-app-ts"    #主应用
+  "/e/work/aehyok/github/vue-qiankun/main"    #主应用
   "/e/work/aehyok/github/vue-qiankun/webpack-app"         # webpack-app 子应用
   "/e/work/aehyok/github/vue-qiankun/map-app"             #map-app 子应用
 )

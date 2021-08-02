@@ -1,28 +1,23 @@
 {
-  "name": "qiankun-mobile-code",
+  "name": "qiankun-example",
   "version": "0.0.1",
   "description": "qiankun demo",
   "main": "index.js",
+  "dependencies": {},
   "devDependencies": {
-    "npm-run-all": "^4.1.5",
-    "nprogress": "^0.2.0",
-    "prettier": "^2.1.2",
-    "stylelint": "^13.7.1",
-    "stylelint-config-recess-order": "^2.0.4",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-prettier": "^1.1.2",
-    "stylelint-scss": "^3.18.0"
+    "npm-run-all": "^4.1.5"
   },
   "scripts": {
     "install": "npm-run-all --serial install:*",
     "install:main": "cd main && npm i",
-    "install:sub-first": "cd sub-first && npm i",
-    "install:sub-second": "cd sub-second && npm i",
+    "install:map-app": "cd map-app && npm i",
+    "install:react-app": "cd react-app && npm i",
+    "install:webpack-app": "cd webpack-app && npm i",
+    "install:webpack-app-ts": "cd webpack-app-ts && npm i",
     "start": "npm-run-all --parallel start:*",
-    "start:sub-first": "cd sub-first && npm start",
-    "start:sub-third": "cd sub-third && npm start",
+    "start:map-app": "cd map-app && npm start",
+    "start:webpack-app": "cd webpack-app && npm start",
     "start:main": "cd main && npm start",
-    "stylelint": "stylelint **/**/**/**/**/*.{html,vue,css,sass,scss,less} --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,10 +27,7 @@
   "keywords": [
     "qiankun",
     "qiankun-example",
-    "qiankun-mobile-code",
-    "vue2",
-    "vite2",
-    "typescript"
+    "demo"
   ],
   "author": "wuxiang",
   "license": "MIT",

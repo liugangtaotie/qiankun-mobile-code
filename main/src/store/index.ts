@@ -1,32 +1,94 @@
-import { initGlobalState } from "qiankun";
-import Vue from "vue";
+import { createStore } from "vuex"
+import { getMenuList } from './data.d'
+import createPersistedState  from 'vuex-persistedstate'
+import { SystemMenu, SystemInfo } from '../../types/models'
+import { getSystemList } from '../services/index'
 
-// 父应用的初始state
-// Vue.observable是为了让initialState变成可响应：https://cn.vuejs.org/v2/api/#Vue-observable。
-const initialState = Vue.observable({
-  user: {
-    name: "zhangsan",
+interface AppState {
+  menuList: SystemMenu[];
+  systemId?: string;
+  currentSystem?: SystemInfo;
+  systemList: [],
+}
+
+const dataState = createPersistedState({
+    paths: ['menuList','systemId',"currentSystem", "systemList"]  // 持久化的数据
+})
+
+export default createStore({
+  state:():AppState =>({
+    systemList:[],
+    menuList: getMenuList(),  // 所有菜单
+    currentSystem: {
+      systemId:"",
+      path:"",
+      title:""
+    },
+  }),
+  mutations: {
+    // 切换系统
+    changeSystem(state: AppState, type: string) {
+      state.systemId = type
+      state.currentSystem = state.systemList.find(item=> item.systemId === type)
+      console.log(state.currentSystem, 'store----');
+    },
+    setSystemList(state: AppState, data) {
+      state.systemList = data
+      console.log(state.systemList, 'state.Slist')
+    }
   },
-  num: 100,
-});
+  actions: {
+    async fetchSystemList({ commit }) {
+      try {
 
-const actions: any = initGlobalState(initialState);
+        /* TODO 获取系统子模块列表静态数据
+        {
+          "data": [
+            {
+              "name": "webpack-app",
+              "productionEntry": "/child/webpack-app/",
+              "developmentEntry": "//localhost:4000/",
+              "title": "数字农业",
+              "homePath": "/webpack-app/home",
+              "normal": "images/module/dvs-farm-normal.png",
+              "selected": "images/module/dvs-farm-selected.png",
+              "enabled": true
+            },
+            {
+              "name": "map-app",
+              "productionEntry": "/child/map-app/",
+              "developmentEntry": "//localhost:5000/",
+              "title": "乡村治理",
+              "homePath": "/map-app/leaflet",
+              "normal": "images/module/dvs-village-normal.png",
+              "selected": "images/module/dvs-village-selected.png",
+              "enabled": true
+            },
+            {
+              "name": "test-app",
+              "productionEntry": "/child/test-app/",
+              "developmentEntry": "//localhost:6000/",
+              "title": "test",
+              "homePath": "/map-app/leaflet",
+              "normal": "images/module/dvs-village-normal.png",
+              "selected": "images/module/dvs-village-selected.png",
+              "enabled": false
+            }
+          ],
+          "code": 200
+        }
+        */
+        const res:any = await getSystemList()
 
-actions.onGlobalStateChange((newState, prev) => {
-  // state: 变更后的状态; prev 变更前的状态
-  console.log("main change", JSON.stringify(newState), JSON.stringify(prev));
-
-  for (const key in newState) {
-    initialState[key] = newState[key];
-  }
-});
-
-// 定义一个获取state的方法下发到子应用
-actions.getGlobalState = (key) => {
-  // 有key，表示取globalState下的某个子级对象
-  // 无key，表示取全部
-
-  return key ? initialState[key] : initialState;
-};
-
-export default actions;
+        if (res?.code === 200) {
+          commit('setSystemList', res.data)
+          window.location.href = "/"
+        }
+       
+      } catch (error) {
+        console.log(error, 'fetchSystemList-error')
+      }
+    },
+  },
+  plugins: [dataState]
+})

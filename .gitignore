@@ -32,4 +32,5 @@ _ReSharper*/
 packages/
 
 node_modules
+
 dist

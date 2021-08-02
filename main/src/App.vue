@@ -1,58 +1,48 @@
 <template>
-  <div id="app">
-    <!-- <keep-alive><router-view ></router-view></keep-alive> -->
-    <keep-alive>
-      <router-view v-if="$route.meta.keepAlive"></router-view>
-    </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive"></router-view>
-    <div id="subapp-viewport"></div>
-
-    <!-- loading -->
-    <!-- <BsLoading /> -->
-  </div>
+  <!---登录和主页等没有layout--->
+  <router-view v-if="!showLayout" />
+  <layout v-show="showLayout"/>
 </template>
-
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+  import { defineComponent, watch, defineAsyncComponent ,ref} from "vue"
+  import { useRoute } from "vue-router"
 
-@Component({
-  name: "App",
-  components: {},
-})
-export default class App extends Vue {
-  // mixins: [eventMixin],
-  private isFirst: Boolean = true;
+  export default defineComponent({
+    name: "App",
+    components: {
+      Layout: defineAsyncComponent(() => import("./layout/index.vue")),
+    },
+    setup() {
+      const route = useRoute()
+      const showLayout = ref(false)
 
-  updated() {
-    if (this.isFirst) {
-      // var element: any = document.getElementById("__loading");
-      const elementMain: any = document.getElementById("__mainLoading");
-      // if (element) {
-      //   element.outerHTML = "";
-      // }
-      if (elementMain) {
-        elementMain.outerHTML = "";
+      // 监测路由判断是主应用路由还是子应用路由
+      watch(
+        () => route.path,
+        () => {        
+          if(['/home', '/login','/', '/init-password'].includes(route.path)) {
+            showLayout.value = false
+          }
+          else {
+            showLayout.value = true
+          }
+        },
+        {
+          immediate: true
+        }
+      )
+
+      // watch(
+      //   () => showLayout,
+      //   (newV,oldV) => {
+      //     console.log(showLayout.value, newV,oldV, 'state-showLayout')
+      //   },{
+      //     immediate: true
+      //   }
+      // )
+      return {
+        showLayout
       }
-      this.isFirst = false;
     }
-  }
-
-  created() {
-    sessionStorage.removeItem("hideLoading");
-    window.__hideLoading__ = false;
-  }
-}
+  })
 </script>
-
-<style lang='less' scoped>
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-#app {
-  font-size: 12px;
-}
-</style>
-

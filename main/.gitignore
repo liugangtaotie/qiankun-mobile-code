@@ -1,29 +1,5 @@
+node_modules
 .DS_Store
-node_modules/
-dist/
-*.zip
-/build/lib/
-outputDev.js
-outputProd.js
-
-package-lock.json
-*.zip
-
-# local env files
-.env.local
-.env.*.local
-
-# Log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
-.idea
-# .vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-src/assets/css/sprites-generated.css
-src/assets/css/sprites-generated.png
+dist
+dist-ssr
+*.local
