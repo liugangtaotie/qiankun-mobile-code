@@ -11,7 +11,7 @@ const microApps = [
     activeRule: getActiveRule("#/sub-first"),
   },
   {
-    entry: "//localhost:4000/",
+    entry: "//localhost:9000/",
     name: "sub-third",
     activeRule: getActiveRule("#/sub-third"),
   },

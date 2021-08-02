@@ -25,7 +25,7 @@
     <van-divider />
 
     <van-button class="flex mt10" type="primary" @click="$router.push('/about')"
-      >home,点击跳转about</van-button
+      >home,点击跳转about1</van-button
     >
     <div class="flex flex_center single">
       store的count数据 <span class="ml20 f30 t2">{{ num }}</span>

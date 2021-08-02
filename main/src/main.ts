@@ -160,6 +160,7 @@ Vue.use(VueLazyload, {
  */
 router.beforeEach((to:any, from, next) => {
   document.title = to.meta.title || "qiankun-mobile-code";
+  console.info('kkkkk',to);
   return next();
 });
 

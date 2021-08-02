@@ -146,7 +146,7 @@ export default defineConfig({
 
     host: "0.0.0.0",
 
-    port: 8080,
+    port: 8060,
     // Load proxy configuration from .env
     // proxy: createProxy(VITE_PROXY),
     proxy: {

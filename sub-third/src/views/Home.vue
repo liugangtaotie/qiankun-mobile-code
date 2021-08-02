@@ -12,7 +12,7 @@
     </div>
 
     <van-grid class="mt10" :gutter="10">
-      <van-grid-item v-for="value in 18" :key="value" icon="photo-o" text="Text" />
+      <van-grid-item v-for="value in 8" :key="value" icon="photo-o" text="Text1" />
     </van-grid>
   </div>
 </template>

@@ -40,7 +40,7 @@ module.exports = {
     return config;
   },
   devServer: {
-    port: 4000,
+    port: 9000,
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
