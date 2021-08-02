@@ -192,6 +192,10 @@ only screen and (max-device-width: 320px) {
   flex: 5;
 }
 
+.f30 {
+  font-size: 30px;
+}
+
 .f20 {
   font-size: 20px;
 }
