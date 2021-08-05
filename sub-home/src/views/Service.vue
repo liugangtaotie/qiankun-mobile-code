@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about text-center">
     <van-nav-bar title="Service" left-text="Back" left-arrow @click-left="$router.go(-1)" />
     <h1>This is an about service</h1>
     <h1>This is an about service</h1>
