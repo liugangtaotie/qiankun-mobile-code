@@ -12,6 +12,7 @@ export default {
   name: "App",
   data() {
     return {
+      isFirst: true,
       isLoading: true,
       microApps,
       current: "/sub-home/",
@@ -33,7 +34,7 @@ export default {
       }
     },
   },
-  components: {},
+
   methods: {
     goto(item) {
       history.pushState(null, item.activeRule, item.activeRule);
