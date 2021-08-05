@@ -25,6 +25,8 @@
     "url": "github.com:liugangtaotie/qiankun-mobile-code.git"
   },
   "keywords": [
+    "vite",
+    "vue2",
     "qiankun",
     "qiankun-example",
     "demo"
