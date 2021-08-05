@@ -13,7 +13,7 @@ const microApps = [
   },
   {
     name: "sub-react",
-    entry: "//localhost:7799/subapp/sub-react/",
+    entry: "//localhost:7788/subapp/sub-react/",
     activeRule: "/sub-react",
   },
 ];
