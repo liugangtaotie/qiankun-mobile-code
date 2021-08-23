@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve-webpack": "vue-cli-service serve",
+    "build-webpack": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "vite"
+    "start": "npm run dev",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "dependencies": {
     "core-js": "^3.6.5",
