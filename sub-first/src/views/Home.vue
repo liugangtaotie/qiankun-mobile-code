@@ -26,8 +26,10 @@
     <van-divider />
 
     <van-grid class="mt10" :gutter="10">
-      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="Text" />
+      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="Text12" />
     </van-grid>
+
+    <van-button class="mt10" type="primary" @click="$router.push('/about')">about page</van-button>
   </div>
 </template>
 

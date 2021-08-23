@@ -16,8 +16,11 @@
     "start": "npm-run-all --parallel start:*",
     "start:sub-home": "cd sub-home && npm start",
     "start:sub-first": "cd sub-first && npm start",
-    "start:sub-react": "cd sub-react && npm start",
     "start:main": "cd main && npm start",
+    "build": "npm-run-all build:* && bash ./scripts/bundle.sh",
+    "build:sub-home": "cd sub-home && npm run build",
+    "build:sub-first": "cd sub-first && npm run build",
+    "build:main": "cd main && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
