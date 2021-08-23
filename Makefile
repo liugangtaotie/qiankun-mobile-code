@@ -5,6 +5,9 @@ default: help
 dev:
 	npm start
 
+remove:
+	npm run remove
+
 analyz:
 	npm run analyz
 

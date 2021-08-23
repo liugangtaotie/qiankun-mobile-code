@@ -12,7 +12,7 @@ cp -r ./sub-home/dist/ ./dist/subapp/sub-home/
 cp -r ./sub-first/dist/ ./dist/subapp/sub-first/
 
 # main基座
-cp -r ./main/dist/ ./dist/
+cp -r ./main/dist/ ./dist/main/
 
 # cd ./dist
 # zip -r mp$(date +%Y%m%d%H%M%S).zip *
