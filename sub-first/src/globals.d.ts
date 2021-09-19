@@ -14,6 +14,7 @@ interface Window {
   BMap:any;
   WebIM:any;
   __POWERED_BY_QIANKUN__:any;
+  __INJECTED_PUBLIC_PATH_BY_QIANKUN__:any;
 }
 
 

@@ -1,4 +1,4 @@
-import "./public-path";
+import "./public-path.ts";
 import Vue from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
