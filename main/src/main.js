@@ -7,7 +7,7 @@ import "nprogress/nprogress.css";
 Vue.config.productionTip = false;
 
 const instance = new Vue({
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
 
 // 定义loader方法，loading改变时，将变量赋值给App.vue的data中的isLoading
@@ -19,32 +19,32 @@ function loader(loading) {
 }
 
 // 给子应用配置加上loader方法
-const apps = microApps.map(item => {
+const apps = microApps.map((item) => {
   return {
     ...item,
-    loader
+    loader,
   };
 });
 
 registerMicroApps(apps, {
-  beforeLoad: app => {
+  beforeLoad: (app) => {
     console.log("before load app.name====>>>>>", app.name);
   },
   beforeMount: [
-    app => {
+    (app) => {
       console.log("[LifeCycle] before mount %c%s", "color: green;", app.name);
-    }
+    },
   ],
   afterMount: [
-    app => {
+    (app) => {
       console.log("[LifeCycle] after mount %c%s", "color: green;", app.name);
-    }
+    },
   ],
   afterUnmount: [
-    app => {
+    (app) => {
       console.log("[LifeCycle] after unmount %c%s", "color: green;", app.name);
-    }
-  ]
+    },
+  ],
 });
 setDefaultMountApp("/sub-home");
 start();
