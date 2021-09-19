@@ -18,11 +18,11 @@
     <van-grid class="flex flex_around" :gutter="10" :column-num="3">
       <van-grid-item icon="photo-o" text="sub-first" @click="gotoSubOne" />
       <van-grid-item icon="photo-o" text="sub-react" @click="gotoSubReact" />
-      <van-grid-item icon="photo-o" text="文字" />
+      <van-grid-item icon="photo-o" text="佛" />
     </van-grid>
 
     <van-grid class="mt10" :gutter="10">
-      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="Text" />
+      <van-grid-item v-for="value in 4" :key="value" icon="photo-o" text="菩萨" />
     </van-grid>
 
     <div class="mt20 pd10 t1">从vuex的global module中获取的state： {{ JSON.stringify(user) }}</div>
